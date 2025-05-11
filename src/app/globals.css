@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
+/* Palette principale */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111111;
+  --font-main: 'Terminal Grotesque', sans-serif;
+
+  /* Couleurs pour logo */
+  --color-d: #3A86FF;
+  --color-b: #FFD166;
+  --color-r: #FF8C42;
+
+  /* Couleurs des sections */
+  --color-dev: #2968c8;
+  --color-bilan: #f7c948;
+  --color-seo: #f06e1e;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Police principale */
+@font-face {
+  font-family: 'Terminal Grotesque';
+  src: url('/fonts/terminal-grotesque.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Fond des sections */
+.bg-section-dev {
+  background-color: var(--color-dev);
 }
 
+.bg-section-bilan {
+  background-color: var(--color-bilan);
+}
+
+.bg-section-seo {
+  background-color: var(--color-seo);
+}
+
+/* Style global */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-main);
+}
+
+.font-terminal {
+  font-family: var(--font-main);
+}
+
+.text-d { color: var(--color-d); }
+.text-b { color: var(--color-b); }
+.text-r { color: var(--color-r); }
+
+.drop-shadow-dbr {
+  text-shadow:
+    -1px -1px 0 white,
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white;
+}
+
+
+
+
+
+/* Animation douce type vague */
+@keyframes lakeFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.bg-lake {
+  background-image:
+    radial-gradient(circle at 10% 40%, #FFD1A1 0%, transparent 25%),
+    radial-gradient(circle at 30% 70%, #FFB77C 0%, transparent 30%),
+    radial-gradient(circle at 70% 50%, #FFA066 0%, transparent 40%),
+    linear-gradient(90deg, #FFD1A1, #FEC196, #FFD1A1);
+  background-blend-mode: overlay, overlay, overlay, normal;
+  background-size: 400% 400%;
+}
+
+.animate-lake {
+  animation: lakeFlow 45s ease-in-out infinite;
 }
