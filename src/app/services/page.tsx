@@ -1,5 +1,6 @@
 // src/app/services/page.tsx
-import Services from "/Users/riclamalice/kDrive2/DATABYRIC/site/src/components/Services.tsx";
+import Services from "@/components/Services";
+
 
 export default function ServicesPage() {
   return <Services />;
