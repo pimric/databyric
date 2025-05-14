@@ -1,4 +1,4 @@
-import "/Users/riclamalice/kDrive2/DATABYRIC/site/src/app/globals.css";
+import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
